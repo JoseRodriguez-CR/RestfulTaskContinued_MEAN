@@ -1,4 +1,4 @@
-<button (click) = "getAllTasksFromService()">Get All Tasks</button>
+
 
 <div *ngFor = "let task of taskList">
     <div class="tasks">
@@ -18,4 +18,9 @@
             Task updated at: {{task.created_at}}
         </div>
     </div>
+</div >
+<h4>Here you can see just one task</h4>
+<div class="task" >
+    Title: {{onetask.title}}, Description: {{onetask.description}}, Completed: {{onetask.completed}}
+
 </div>

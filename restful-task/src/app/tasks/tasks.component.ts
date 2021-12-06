@@ -9,6 +9,7 @@ import { TasksService } from './tasks.service';
 })
 export class TasksComponent implements OnInit {
   taskList: any[] = [];
+  onetask: any;
 
   constructor( private _tasksService: TasksService ) {
     
@@ -38,7 +39,7 @@ export class TasksComponent implements OnInit {
     observable
     .subscribe((data:any)=> {
       console.log("Now you can see our Study Task API", data)
-      
+      this.onetask = data;
     });     
   }
 
