@@ -9,18 +9,19 @@ import { TasksService } from './tasks.service';
 })
 export class TasksComponent implements OnInit {
   taskList: any[] = [];
-  onetask: any;
+  onetask: any = {
+    title:"",
+    description: "",
+    completed: false
+  };
 
   constructor( private _tasksService: TasksService ) {
-    
   }
 
   ngOnInit(): void {
     this.getAllTasksFromService();
     this.showTaskFromService();
-
   }
-
   
   getAllTasksFromService(){
     console.log("Testting from service");
@@ -31,7 +32,6 @@ export class TasksComponent implements OnInit {
       console.log("Now you can see our Tasks API", data)
       this.taskList = data;
     }); 
-
   }
 
   showTaskFromService(){
@@ -42,5 +42,4 @@ export class TasksComponent implements OnInit {
       this.onetask = data;
     });     
   }
-
 }
